@@ -1,0 +1,38 @@
+.header__container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 6px 12px;
+   border-bottom: 1px solid var(--bg-border);
+}
+
+#header__text {
+   letter-spacing: 3px;
+}
+
+#header__add {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 3px;
+   padding: 3px 8px;
+
+   border-radius: 10px;
+   border: none;
+   background-color: var(--bg-accent);
+   box-shadow: 0 0 2px var(--bg-border);
+   transition: padding 0.1s ease-in;
+}
+
+#header__add:hover {
+   padding: 3px 1rem;
+}
+
+#header__add img {
+   height: 1rem;
+   /* width: 12px; */
+}
+
+#header__add span {
+   letter-spacing: 3px;
+}
