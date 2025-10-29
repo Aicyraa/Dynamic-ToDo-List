@@ -22,6 +22,9 @@
    background-color: var(--bg-accent);
    box-shadow: 0 0 2px var(--bg-border);
    transition: padding 0.1s ease-in;
+
+   cursor: pointer;
+
 }
 
 #header__add:hover {
