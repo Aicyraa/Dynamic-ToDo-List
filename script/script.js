@@ -1,21 +1,24 @@
-let add_modal = {
-   overlay: document.querySelector(".overlay"),
-   addModal: document.querySelector(".header__add"),
-   addBtn: document.getElementById("header__add__btn"),
-   saveBtn: document.querySelector("#header__add__submit"),
-};
+import Task from "./task.js";
+import modal_obj, {
+   openModal as open,
+   closeModal as close,
+} from "./addModal.js";
 
-function openModal() {
-   add_modal.overlay.classList.add("active");
-   add_modal.addModal.classList.add("active");
-}
+// Modal
+modal_obj.addBtn.addEventListener("click", open);
+modal_obj.overlay.addEventListener("click", close);
 
-function closeModal() {
-   add_modal.overlay.classList.remove("active");
-   add_modal.addModal.classList.remove("active");
-}
+// Add Task
+modal_obj.saveBtn.addEventListener("click", (e) => {
+   let task = document.getElementById("add__task");
+   let deadline = document.getElementById("add__task__due");
 
-add_modal.addBtn.addEventListener('click', openModal)
-add_modal.overlay.addEventListener('click', closeModal)
+   console.log(task.value, deadline.value);
 
-export default add_modal
+   if (!task.value.trim() || !deadline.value.trim()) {
+      return alert('invalid task!')
+   }
+
+   
+
+});
