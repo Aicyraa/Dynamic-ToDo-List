@@ -35,6 +35,9 @@ body {
    border-radius: 8px;
    box-shadow: 0 0 3px var(--bg-shadow);
    background-color: var(--bg-card);
+
+   display: flex;
+   flex-direction: column;
 }
 
 /* 
@@ -45,11 +48,17 @@ body {
 
 .todo__container {
    padding: 8px 1rem;
-   overflow-y: scroll;
+   padding: 8px 1;
+   height: calc(100% - 40px);
+   overflow: auto;
 }
 
 .todo__container::-webkit-scrollbar {
    display: none;
+}
+
+.todo {
+   margin: 12px 0;
 }
 
 .todo__info {
@@ -85,3 +94,24 @@ body {
    letter-spacing: 3px;
    font-size: 0.7rem;
 }
+
+/* 
+
+ - TODO edit
+
+*/
+
+.todo__edit {
+   position: absolute;
+   width: 400px;
+   height: 350px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border: 2px solid black;
+
+   display: flex;
+   flex-direction: column;
+}
+
+
