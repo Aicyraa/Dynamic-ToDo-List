@@ -1,14 +1,76 @@
-.overlay{
-   display: none !important;
+/* BLACK OVERLAY */
+
+.overlay {
+   display: none ;
 }
 
-.overlay{
+.overlay.active {
+   display: block !important;
    position: absolute;
    height: 100%;
    width: 100%;
    background-color: hsl(0, 0%, 0%, 0.3);
    z-index: 1;
 }
+
+/* ADD TASK MODAL */
+
+.header__add {
+   display: none;
+}
+
+.header__add.active {
+   position: absolute;
+   width: 400px;
+   height: 330px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: var(--bg-light);
+
+   display: flex !important;
+   flex-direction: column;
+   gap: 12px;
+
+   z-index: 2;
+}
+
+.header__add__header {
+   background-color: var(--header);
+   border: 8px 8px 0 0;
+   padding: 8px;
+}
+
+.header__add > textarea {
+   padding: 6px 10px;
+   font-size: 14px;
+   border-radius: 6px;
+   margin: 0 12px;
+   border: 1px solid var(--bg-accent);
+}
+
+.header__add > input[type="datetime-local"] {
+   padding: 6px;
+   letter-spacing: 5px;
+   border-radius: 6px;
+   margin: 0 12px;
+   border: 1px solid var(--bg-accent);
+}
+
+.header__add > button {
+   padding: 8px;
+   margin: 0 12px 8px 12px;
+   border: 1px solid var(--bg-accent);
+   border-radius: 8px;
+   background-color: var(--bg-accent);
+}
+
+.header__add input[type="datetime-local"]:focus,
+.header__add textarea:focus {
+   outline: 1px solid var(--bg-accent) !important;
+}
+
+/* TASK HEADER */
 
 .header__container {
    display: flex;
@@ -24,7 +86,7 @@
    letter-spacing: 3px;
 }
 
-#header__add {
+#header__add__btn {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -40,18 +102,20 @@
    cursor: pointer;
 }
 
-#header__add:hover {
+#header__add__btn:hover {
    padding: 3px 1rem;
 }
 
-#header__add img {
+#header__add__btn img {
    height: 1rem;
    /* width: 12px; */
 }
 
-#header__add span {
+#header__add__btn span {
    letter-spacing: 3px;
 }
+
+/* EDIT MODAL HEADER */
 
 .todo__edit__header {
    background-color: var(--header);
