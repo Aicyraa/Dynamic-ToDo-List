@@ -1,20 +1,5 @@
-/* BLACK OVERLAY */
-
-.overlay {
-   display: none ;
-}
-
-.overlay.active {
-   display: block !important;
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   background-color: hsl(0, 0%, 0%, 0.3);
-   z-index: 1;
-}
 
 /* ADD TASK MODAL */
-
 .header__add {
    display: none;
 }
@@ -35,10 +20,17 @@
    z-index: 2;
 }
 
-.header__add__header {
+.header__add__top {
    background-color: var(--header);
    border: 8px 8px 0 0;
    padding: 8px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header__add__top img{
+   cursor: pointer;
 }
 
 .header__add > textarea {
