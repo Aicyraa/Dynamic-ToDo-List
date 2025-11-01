@@ -1,13 +1,14 @@
 let add_modal = {
    overlay: document.querySelector(".overlay"),
    addModal: document.querySelector(".header__add"),
-   errModal: null,
+   errModal: document.querySelector(".error__modal"),
+   errBtn: document.getElementById("error__close"),
    addBtn: document.getElementById("header__add__btn"),
    closeBtn: document.getElementById("header__close__btn"),
    saveBtn: document.querySelector("#header__add__submit"),
 };
 
-function openModal(...modals) {
+export function openModal(...modals) {
    return function () {
       for (let modal of modals) {
          modal.classList.add("active");
@@ -15,7 +16,7 @@ function openModal(...modals) {
    };
 }
 
-function closeModal(...modals) {
+export function closeModal(...modals) {
    return function () {
       for (let modal of modals) {
          modal.classList.remove("active");
@@ -23,5 +24,10 @@ function closeModal(...modals) {
    };
 }
 
+export function setError(err) {
+   add_modal.errModal.querySelector('h3').textContent = err
+   let open = openModal(add_modal.errModal);
+   open()
+}
+
 export default add_modal;
-export { openModal, closeModal };
