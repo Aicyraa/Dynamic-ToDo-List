@@ -3,5 +3,6 @@ export default class Task{
       this.id = id
       this.task = task
       this.deadline = deadline
+      this.isComplete = false
    }
 }

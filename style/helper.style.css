@@ -1,0 +1,45 @@
+.overlay {
+   display: none ;
+}
+
+.overlay.active {
+   display: block !important;
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   background-color: hsl(0, 0%, 0%, 0.3);
+   z-index: 1;
+}
+
+/* Error Modal */
+
+.error__modal {
+   /* display: none; */
+}
+
+.error__modal {
+   box-sizing: border-box;
+   position: absolute;
+   top: 2rem;
+   width: 350px;
+   height: 150px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 1rem;
+   padding: 10px 12px;  
+   border-radius: 8px;
+   background-color: var(--bg-light);
+}
+
+.error__modal div {
+   flex-grow: 1;
+}
+
+#error__close {
+   padding: 8px 12px;
+   border-radius: 8px;
+   border: none;
+   box-shadow: 0 0 3px var(--bg-shadow);
+   background-color: var(--bg-accent);
+}
